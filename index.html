@@ -1,762 +1,135 @@
 <!DOCTYPE html>
-<html
-  lang="pt-BR"
-  class="light-style layout-menu-fixed"
-  dir="ltr"
-  data-theme="theme-default"
-  data-assets-path="../assets/"
-  data-template="vertical-menu-template-free"
->
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-    />
-    <title>Dashboard | PLANEJA+</title>
-    <meta name="description" content="Dashboard financeiro PLANEJA+" />
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
-    <script src="../assets/vendor/js/helpers.js"></script>
-    <script src="../assets/js/config.js"></script>
-    <script>
-      if (localStorage.getItem('auth') !== 'true') {
-        // console.warn("Usuário não autenticado, redirecionando para login..."); // Opcional: manter o log
-        window.location.href = 'auth-login-basic.html'; // DESCOMENTE E ATIVE O REDIRECIONAMENTO
-      }
-    </script>
-  </head>
 
-  <body>
-    <div class="layout-wrapper layout-content-navbar">
-      <div class="layout-container">
-        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-          <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
-              <span class="app-brand-logo demo">
-                <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-                  <defs> <path d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z" id="path-1" ></path> <path d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z" id="path-3" ></path> <path d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z" id="path-4" ></path> <path d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z" id="path-5" ></path> </defs> <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)"> <g id="Icon" transform="translate(27.000000, 15.000000)"> <g id="Mask" transform="translate(0.000000, 8.000000)"> <mask id="mask-2" fill="white"> <use xlink:href="#path-1"></use> </mask> <use fill="#696cff" xlink:href="#path-1"></use> <g id="Path-3" mask="url(#mask-2)"> <use fill="#696cff" xlink:href="#path-3"></use> <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use> </g> <g id="Path-4" mask="url(#mask-2)"> <use fill="#696cff" xlink:href="#path-4"></use> <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use> </g> </g> <g id="Triangle" transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) " > <use fill="#696cff" xlink:href="#path-5"></use> <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use> </g> </g> </g> </g> </svg>
-              </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">PLANEJA+</span>
-            </a>
-            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-              <i class="bx bx-chevron-left bx-sm align-middle"></i>
-            </a>
-          </div>
-          
-          <div class="menu-inner-shadow"></div>
-          <ul class="menu-inner py-1">
-            <li class="menu-item active"> <a href="index.html" class="menu-link"> <i class="menu-icon tf-icons bx bx-home-circle"></i> <div data-i18n="Analytics">Dashboard</div> </a> </li>
-            <!-- <li class="menu-header small text-uppercase"> <span class="menu-header-text">MENU</span> </li> -->
-            <!-- <li class="menu-item"> <a href="javascript:void(0);" class="menu-link menu-toggle"> <i class="menu-icon tf-icons bx bx-dock-top"></i> <div data-i18n="Account Settings">Configurações</div> </a> <ul class="menu-sub"> <li class="menu-item"> <a href="pages-account-settings-account.html" class="menu-link"> <div data-i18n="Account">Perfil</div> </a> </li> </ul> </li> -->
-            <!-- <li class="menu-item"> <a href="javascript:void(0);" class="menu-link menu-toggle"> <i class="menu-icon tf-icons bx bx-lock-open-alt"></i> <div data-i18n="Authentications">Autentificação</div> </a> <ul class="menu-sub"> <li class="menu-item"> <a href="auth-login-basic.html" class="menu-link" target="_blank"> <div data-i18n="Basic">Login</div> </a> </li> <li class="menu-item"> <a href="auth-register-basic.html" class="menu-link" target="_blank"> <div data-i18n="Basic">Register</div> </a> </li> <li class="menu-item"> <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank"> <div data-i18n="Basic">Recuperação a senha</div> </a> </li> </ul> </li> -->
-          </ul>git push -u origin main
-        </aside>
 
-        <div class="layout-page">
-          <!-- <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar" > <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none"> <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)"> <i class="bx bx-menu bx-sm"></i> </a> </div> <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse"> <ul class="navbar-nav flex-row align-items-center ms-auto"> <li class="nav-item lh-1 me-3"> <a class="github-button" href="https://github.com/themeselection/sneat-html-admin-template-free" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themeselection/sneat-html-admin-template-free on GitHub" >PLANEJA+</a > </li> <li class="nav-item navbar-dropdown dropdown-user dropdown"> <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown"> <div class="avatar avatar-online"> <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" /> </div> </a> <ul class="dropdown-menu dropdown-menu-end"> <li> <a class="dropdown-item" href="pages-account-settings-account.html"> <div class="d-flex"> <div class="flex-shrink-0 me-3"> <div class="avatar avatar-online"> <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" /> </div> </div> <div class="flex-grow-1"> <span class="fw-semibold d-block">John Doe</span> <small class="text-muted">úsu</small> </div> </div> </a> </li> <li> <div class="dropdown-divider"></div> </li> <li> <a class="dropdown-item" href="pages-account-settings-account.html"> <i class="bx bx-user me-2"></i> <span class="align-middle">My Profile</span> </a> </li> <li> <div class="dropdown-divider"></div> </li> <li> <a class="dropdown-item" href="#" id="logoutButton"> <i class="bx bx-power-off me-2"></i> <span class="align-middle">Log Out</span> </a> </li> </ul> </li> </ul> </div> </nav> -->
+<html lang="en" class="light-style  customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="assets/"
+  data-template="vertical-menu-template-no-customizer">
 
-          <div class="content-wrapper">
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="row">
-                <div class="col-lg-3 col-md-6 col-12 mb-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="card-title d-flex align-items-start justify-content-between">
-                        <div class="avatar flex-shrink-0">
-                          <img src="../assets/img/icons/unicons/chart-success.png" alt="chart success" class="rounded" />
-                        </div>
-                        <div class="dropdown">
-                          <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addSalaryModal">Adicionar Saldo</a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#removeSalaryModal">Remover Saldo</a>
-                          </div>
-                        </div>
-                      </div>
-                      <span class="fw-semibold d-block mb-1">Saldo</span>
-                      <h3 class="card-title mb-2" id="profitValue">R$ 0,00</h3>
-                      <small class="text-muted">Saldo Adicionado</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 mb-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="card-title d-flex align-items-start justify-content-between">
-                        <div class="avatar flex-shrink-0">
-                          <img src="../assets/img/icons/unicons/cc-primary.png" alt="Despesas Variadas" class="rounded" />
-                        </div>
-                        <div class="dropdown">
-                          <button class="btn p-0" type="button" id="cardOptVariedExpenses" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOptVariedExpenses">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addVariedExpenseModal">Adicionar Despesa Variada</a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#viewVariedExpensesModal">Ver Despesas Variadas</a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#removeVariedExpenseModal">Remover Despesa Variada</a>
-                          </div>
-                        </div>
-                      </div>
-                      <span>Despesas Variadas</span>
-                      <h3 class="card-title text-nowrap mb-1" id="variedExpensesTotal">R$ 0,00</h3>
-                      <small class="text-muted">Total de despesas variadas</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 mb-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="card-title d-flex align-items-start justify-content-between">
-                        <div class="avatar flex-shrink-0">
-                          <img src="../assets/img/icons/unicons/cc-warning.png" alt="Despesas Fixas" class="rounded" />
-                        </div>
-                        <div class="dropdown">
-                          <button class="btn p-0" type="button" id="cardOptFixedExpenses" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOptFixedExpenses">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addFixedExpenseModal">Adicionar Despesa Fixa</a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#viewFixedExpensesModal">Ver Despesas Fixas</a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#removeFixedExpenseModal">Remover Despesa Fixa</a>
-                          </div>
-                        </div>
-                      </div>
-                      <span>Despesas Fixas</span>
-                      <h3 class="card-title text-nowrap mb-1" id="fixedExpensesTotal">R$ 0,00</h3>
-                      <small class="text-muted">Total de despesas fixas</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 mb-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="card-title d-flex align-items-start justify-content-between">
-                        <div class="avatar flex-shrink-0">
-                          <img src="../assets/img/icons/unicons/wallet-info.png" alt="Reserva" class="rounded" />
-                        </div>
-                        <div class="dropdown">
-                          <button class="btn p-0" type="button" id="reservaCardOpt" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="reservaCardOpt">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addReservaModal">Adicionar à Reserva</a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#viewReservaModal">Ver Reserva</a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#removeReservaModal">Sacar da Reserva</a>
-                          </div>
-                        </div>
-                      </div>
-                      <span class="fw-semibold d-block mb-1">Reserva</span>
-                      <h3 class="card-title mb-2" id="totalReserva">R$ 0,00</h3>
-                      <small class="text-muted">Total em reserva</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-              <div class="row">
-                <div class="col-md-6 mb-4">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
-                      <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Composição Financeira</h5>
-                        <small class="text-muted" id="financeChartTotalSmall">Total Alocado: R$ 0,00</small>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="d-flex justify-content-center align-items-center mb-3">
-                        <div id="orderStatisticsChart" style="min-height: 165px;"></div>
-                      </div>
-                      <ul class="p-0 m-0" id="financeChartLegend">
-                        <li class="d-flex mb-2 pb-1"> <div class="avatar flex-shrink-0 me-2"> <span class="avatar-initial rounded bg-label-warning"><i class='bx bx-credit-card'></i></span> </div> <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-1"> <div class="me-2"> <h6 class="mb-0">Despesas Variadas</h6> </div> <div class="user-progress"> <small class="fw-semibold" id="legendVariedExpenses">R$0.00</small> </div> </div> </li>
-                        <li class="d-flex mb-2 pb-1"> <div class="avatar flex-shrink-0 me-2"> <span class="avatar-initial rounded bg-label-primary"><i class='bx bx-home-alt'></i></span> </div> <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-1"> <div class="me-2"> <h6 class="mb-0">Despesas Fixas</h6> </div> <div class="user-progress"> <small class="fw-semibold" id="legendFixedExpenses">R$0.00</small> </div> </div> </li>
-                        <li class="d-flex mb-2 pb-1"> <div class="avatar flex-shrink-0 me-2"> <span class="avatar-initial rounded bg-label-success"><i class='bx bx-wallet'></i></span> </div> <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-1"> <div class="me-2"> <h6 class="mb-0">Reserva</h6> </div> <div class="user-progress"> <small class="fw-semibold" id="legendReserva">R$0.00</small> </div> </div> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between pb-0 pt-3">
-                        <div class="card-title mb-0">
-                            <h5 class="m-0 me-2">Histórico Anual</h5>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <label for="yearSelector" class="form-label mb-0 me-2">Ano:</label>
-                            <select id="yearSelector" class="form-select form-select-sm" style="width: auto;"></select>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="annualHistoryChart" style="min-height: 320px;"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <!-- <title>Sneat - Free Bootstrap 5 HTML Admin Template</title> -->
 
-              <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="card">
-                        <div class="card-header d-flex align-items-center justify-content-between">
-                            <h5 class="card-title m-0">Resumo Mensal Detalhado</h5>
-                            </div>
-                        <div class="card-body">
-                            <div id="newDetailedMonthlyChart" style="min-height: 350px;"></div>
-                        </div>
-                    </div>
-                </div>
-              </div>
+  <meta name="description" content="" />
 
-            <div class="content-backdrop fade"></div>
-          </div>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
+
+  <!-- Fonts -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"> -->
+
+  <!-- Core CSS -->
+  <!-- <link rel="stylesheet" href="assets/vendor/css/core.css" />
+  <link rel="stylesheet" href="assets/vendor/css/theme-default.css" />
+  <link rel="stylesheet" href="assets/css/demo.css" />
+</head> -->
+
+<body>
+
+  <!-- Content -->
+  <!-- <div class="container flex-grow-1 container-p-y my-2">
+    <h3>Thank you for using Sneat - Free Bootstrap 5 HTML Admin Template! 😇</h3>
+    <p>If you’re a developer looking for most Powerful & comprehensive Bootstrap 5 HTML Admin Dashboard Template built
+      for developers, rich with features, and highly customizable look no further than Sneat. We’ve followed the highest
+      industry standards to bring you the very best admin template that is not only fast and easy to use but highly
+      scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want
+      with very little hassle.</p> -->
+
+    <!-- Examples -->
+    <!-- <div class="row mt-sm-4 mt-3">
+      <div class="col-12 mb-3">
+        <div class="card">
+          <h5 class="card-header">Template Links</h5> -->
+          <!-- Template Demo Links -->
+          <table class="table">
+            <tbody>
+              <tr>
+                <!-- <th>Free Version</th> -->
+                <td><a href="html/index.html" target="_blank">Vertical Menu Template</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <!--/ Template Demo Links -->
         </div>
       </div>
-      <div class="layout-overlay layout-menu-toggle"></div>
+
+      <div class="col-12 mb-3">
+        <div class="card">
+
+          <!-- <h5 class="card-header">Other Important Links</h5> -->
+          <!-- Other Links -->
+          <!-- <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">URL</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td>License </td>
+                <td>
+                  <a href="https://themeselection.com/license/" target="_blank">https://themeselection.com/license/</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Documentation</td>
+                <td>
+                  <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                    target="_blank">https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Changelog</td>
+                <td>
+                  <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template-free/changelog.html"
+                    target="_blank">https://themeselection.com/demo/sneat-bootstrap-html-admin-template-free/changelog.html</a>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>GitHub Repository</td>
+                <td>
+                  <a href="https://github.com/themeselection/sneat-html-admin-template-free"
+                    target="_blank">https://github.com/themeselection/sneat-html-admin-template-free</a>
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>Support</td>
+                <td>
+                  <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                    target="_blank">https://github.com/themeselection/sneat-html-admin-template-free/issues</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+ 
+        </div>
+      </div> -->
+
+      <!-- <div class="col-12 mb-3">
+        <p>Looking for <strong>PRO</strong> version with <strong>Premium support</strong>?</p>
+        <div class="upgrade-to-pro">
+          <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank"
+            class="btn btn-danger">Upgrade to <strong>Sneat Pro</strong></a>
+        </div>
+      </div>
     </div>
+  </div> -->
+  <!-- / Content -->
 
-    <div class="modal fade" id="addSalaryModal" tabindex="-1" aria-labelledby="addSalaryModalLabel" aria-hidden="true"> <div class="modal-dialog"> <form id="salaryForm"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="addSalaryModalLabel">Adicionar Saldo</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <div class="mb-3"> <label for="salaryAmount" class="form-label">Valor</label> <input type="number" class="form-control" id="salaryAmount" placeholder="Digite o valor" step="0.01" min="0.01" required> <div class="invalid-feedback">Por favor, insira um valor positivo.</div> </div> <div class="mb-3"> <label for="salaryDate" class="form-label">Data da Entrada (opcional)</label> <input type="date" class="form-control" id="salaryDate"> <small class="form-text text-muted">Se não informada, usa a data atual.</small> </div> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button> <button type="submit" class="btn btn-primary">Salvar</button> </div> </div> </form> </div> </div>
-    <div class="modal fade" id="removeSalaryModal" tabindex="-1" aria-labelledby="removeSalaryLabel" aria-hidden="true"> <div class="modal-dialog"> <form id="removeSalaryForm"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">Remover Saldo</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <div class="mb-3"> <label for="removeSalaryAmount" class="form-label">Valor a Remover</label> <input type="number" class="form-control" id="removeSalaryAmount" step="0.01" min="0.01" required> <div class="invalid-feedback">Por favor, insira um valor positivo para remover.</div> </div> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button> <button type="submit" class="btn btn-danger">Remover</button> </div> </div> </form> </div> </div>
+</body>
 
-    <div class="modal fade" id="addVariedExpenseModal" tabindex="-1" aria-labelledby="addVariedExpenseLabel" aria-hidden="true"> <div class="modal-dialog"> <form id="variedExpenseForm"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="addVariedExpenseLabel">Adicionar Despesa Variada</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <div class="mb-3"> <label for="variedExpenseAmount" class="form-label">Valor</label> <input type="number" class="form-control" id="variedExpenseAmount" step="0.01" min="0.01" required> <div class="invalid-feedback">Por favor, insira um valor positivo.</div> </div> <div class="mb-3"> <label for="variedExpenseDesc" class="form-label">Descrição</label> <input type="text" class="form-control" id="variedExpenseDesc" required maxlength="100"> <div class="invalid-feedback">Por favor, insira uma descrição.</div> </div> <div class="mb-3"> <label for="variedExpenseDate" class="form-label">Data (opcional)</label> <input type="date" class="form-control" id="variedExpenseDate"> <small class="form-text text-muted">Se não informada, usa a data atual.</small> </div> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button> <button type="submit" class="btn btn-primary">Salvar</button> </div> </div> </form> </div> </div>
-    <div class="modal fade" id="viewVariedExpensesModal" tabindex="-1" aria-labelledby="viewVariedExpensesLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="viewVariedExpensesLabel">Despesas Variadas</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <table class="table table-bordered"> <thead class="table-light"> <tr> <th>#</th> <th>Descrição</th> <th>Valor</th><th>Data</th> </tr> </thead> <tbody id="variedExpensesTableBody"></tbody> </table> </div> <div class="modal-footer"> <button type="button" class="btn btn-success" id="downloadVariedExpensesCSV">Baixar CSV</button> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button> </div> </div> </div> </div>
-    <div class="modal fade" id="removeVariedExpenseModal" tabindex="-1" aria-labelledby="removeVariedExpenseLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="removeVariedExpenseLabel">Remover Despesas Variadas</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <table class="table table-striped"> <thead> <tr> <th>#</th> <th>Descrição</th> <th>Valor</th><th>Data</th> <th>Ações</th> </tr> </thead> <tbody id="removeVariedExpensesTableBody"></tbody> </table> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button> </div> </div> </div> </div>
-
-    <div class="modal fade" id="addFixedExpenseModal" tabindex="-1" aria-labelledby="addFixedExpenseLabel" aria-hidden="true"> <div class="modal-dialog"> <form id="fixedExpenseForm"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">Adicionar Despesa Fixa</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <div class="mb-3"> <label for="fixedExpenseAmount" class="form-label">Valor</label> <input type="number" class="form-control" id="fixedExpenseAmount" step="0.01" min="0.01" required> <div class="invalid-feedback">Por favor, insira um valor positivo.</div> </div> <div class="mb-3"> <label for="fixedExpenseDesc" class="form-label">Descrição</label> <input type="text" class="form-control" id="fixedExpenseDesc" required maxlength="100"> <div class="invalid-feedback">Por favor, insira uma descrição.</div> </div> <div class="mb-3"> <label for="fixedExpenseDate" class="form-label">Data (opcional)</label> <input type="date" class="form-control" id="fixedExpenseDate"> <small class="form-text text-muted">Se não informada, usa a data atual.</small> </div> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button> <button type="submit" class="btn btn-primary">Salvar</button> </div> </div> </form> </div> </div>
-    <div class="modal fade" id="viewFixedExpensesModal" tabindex="-1" aria-labelledby="viewFixedExpensesLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">Despesas Fixas</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <table class="table table-bordered"> <thead class="table-light"> <tr> <th>#</th> <th>Descrição</th> <th>Valor</th><th>Data</th> </tr> </thead> <tbody id="fixedExpensesTableBody"></tbody> </table> </div> <div class="modal-footer"> <button type="button" class="btn btn-success" id="downloadFixedExpensesCSV">Baixar CSV</button> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button> </div> </div> </div> </div>
-    <div class="modal fade" id="removeFixedExpenseModal" tabindex="-1" aria-labelledby="removeFixedExpenseLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">Remover Despesas Fixas</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <table class="table table-striped"> <thead> <tr> <th>#</th> <th>Descrição</th> <th>Valor</th><th>Data</th> <th>Ações</th> </tr> </thead> <tbody id="removeFixedExpensesTableBody"></tbody> </table> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button> </div> </div> </div> </div>
-
-    <div class="modal fade" id="addReservaModal" tabindex="-1" aria-labelledby="addReservaLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <form id="formAddReserva"> <div class="modal-header"> <h5 class="modal-title" id="addReservaLabel">Adicionar à Reserva</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <div class="mb-3"> <label for="reservaDescription" class="form-label">Descrição</label> <input type="text" class="form-control" id="reservaDescription" required maxlength="100" /> <div class="invalid-feedback">Por favor, insira uma descrição.</div> </div> <div class="mb-3"> <label for="reservaValue" class="form-label">Valor</label> <input type="number" class="form-control" id="reservaValue" min="0.01" step="0.01" required /> <div class="invalid-feedback">Por favor, insira um valor positivo.</div> </div> <div class="mb-3"> <label for="reservaDate" class="form-label">Data (opcional)</label> <input type="date" class="form-control" id="reservaDate"> <small class="form-text text-muted">Se não informada, usa a data atual.</small> </div> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button> <button type="submit" class="btn btn-primary">Adicionar</button> </div> </form> </div> </div> </div>
-    <div class="modal fade" id="viewReservaModal" tabindex="-1" aria-labelledby="viewReservaLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="viewReservaLabel">Detalhes da Reserva</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <table class="table table-bordered"> <thead class="table-light"> <tr> <th>#</th> <th>Descrição</th> <th>Valor</th><th>Data</th> </tr> </thead> <tbody id="reservaTableBody"></tbody> </table> </div> <div class="modal-footer"> <button type="button" class="btn btn-success" id="downloadReservaCSV">Baixar CSV</button> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button> </div> </div> </div> </div>
-    <div class="modal fade" id="removeReservaModal" tabindex="-1" aria-labelledby="removeReservaLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="removeReservaLabel">Sacar da Reserva</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button> </div> <div class="modal-body"> <table class="table table-bordered"> <thead class="table-light"> <tr> <th>#</th> <th>Descrição</th> <th>Valor</th><th>Data</th> <th>Ações</th> </tr> </thead> <tbody id="removeReservaTableBody"></tbody> </table> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button> </div> </div> </div> </div>
-
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="../assets/vendor/js/menu.js"></script>
-    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/dashboards-analytics.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-    <script>
-      // Módulo de Autenticação (Simulado)
-      const AuthManager = (function () {
-        const checkAuth = function () { if (localStorage.getItem('auth') !== 'true') { console.warn('Usuário não autenticado.'); /* window.location.href = 'login.html'; */ } };
-        const logout = function () { localStorage.removeItem('auth'); alert('Você foi desconectado.'); window.location.href = 'auth-login-basic.html'; };
-        return { checkAuth, logout };
-      })();
-
-      // Módulo de UI
-      const UIManager = (function () {
-        const formatCurrency = (value) => value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-        const formatDate = (dateString) => {
-            if (!dateString) return 'N/A';
-            const date = new Date(dateString);
-            return !isNaN(date.getTime()) ? date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' }) : 'Data Inválida';
-        };
-
-        const DOMElements = {
-            profitValue: document.getElementById('profitValue'),
-            variedExpensesTotal: document.getElementById('variedExpensesTotal'),
-            fixedExpensesTotal: document.getElementById('fixedExpensesTotal'),
-            totalReserva: document.getElementById('totalReserva'),
-            variedExpensesTableBody: document.getElementById('variedExpensesTableBody'),
-            removeVariedExpensesTableBody: document.getElementById('removeVariedExpensesTableBody'),
-            fixedExpensesTableBody: document.getElementById('fixedExpensesTableBody'),
-            removeFixedExpensesTableBody: document.getElementById('removeFixedExpensesTableBody'),
-            reservaTableBody: document.getElementById('reservaTableBody'),
-            removeReservaTableBody: document.getElementById('removeReservaTableBody'),
-            legendVariedExpenses: document.getElementById('legendVariedExpenses'),
-            legendFixedExpenses: document.getElementById('legendFixedExpenses'),
-            legendReserva: document.getElementById('legendReserva'),
-            financeChartTotalSmall: document.getElementById('financeChartTotalSmall'),
-            yearSelector: document.getElementById('yearSelector')
-        };
-
-        const showMessage = (message, type = 'info') => alert(`[${type.toUpperCase()}] ${message}`);
-        const updateDisplay = (el, value, isCurrency = true) => { if (el) el.innerText = isCurrency ? formatCurrency(value) : value; };
-
-        const populateTable = (tbodyEl, items, actionsConfig) => {
-            if (!tbodyEl) { console.warn("Elemento tbody não encontrado para popular tabela:", tbodyEl); return;}
-            tbodyEl.innerHTML = '';
-            items.forEach((item, index) => {
-                const tr = document.createElement('tr');
-                let actionsHtml = '';
-                if (actionsConfig) {
-                    actionsHtml = `<td><button class="btn btn-danger btn-sm" onclick="${actionsConfig.handlerName}(${index})">${actionsConfig.buttonText}</button></td>`;
-                }
-                tr.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${item.descricao}</td>
-                    <td>${formatCurrency(item.valor)}</td>
-                    <td>${formatDate(item.data)}</td>
-                    ${actionsHtml}
-                `;
-                tbodyEl.appendChild(tr);
-            });
-        };
-
-        const populateYearSelector = (years, selectedYear) => {
-            if (DOMElements.yearSelector) {
-                DOMElements.yearSelector.innerHTML = '';
-                if (years.length === 0) {
-                    const currentYear = new Date().getFullYear();
-                    const option = document.createElement('option');
-                    option.value = currentYear;
-                    option.text = currentYear;
-                    option.selected = true;
-                    DOMElements.yearSelector.appendChild(option);
-                    return;
-                }
-                years.forEach(year => {
-                    const option = document.createElement('option');
-                    option.value = year;
-                    option.text = year;
-                    if (year === selectedYear) {
-                        option.selected = true;
-                    }
-                    DOMElements.yearSelector.appendChild(option);
-                });
-            }
-        };
-
-        return {
-            showMessage,
-            updateSaldoDisplay: (saldo) => updateDisplay(DOMElements.profitValue, saldo),
-            updateTotalVariedExpenses: (total) => { updateDisplay(DOMElements.variedExpensesTotal, total); updateDisplay(DOMElements.legendVariedExpenses, total); },
-            updateTotalFixedExpenses: (total) => { updateDisplay(DOMElements.fixedExpensesTotal, total); updateDisplay(DOMElements.legendFixedExpenses, total); },
-            updateTotalReserva: (total) => { updateDisplay(DOMElements.totalReserva, total); updateDisplay(DOMElements.legendReserva, total); },
-            updateTotalAlocadoChartLegend: (total) => {if (DOMElements.financeChartTotalSmall) DOMElements.financeChartTotalSmall.innerText = `Total Alocado: ${formatCurrency(total)}`;},
-            populateVariedExpensesTable: (items) => populateTable(DOMElements.variedExpensesTableBody, items),
-            populateRemoveVariedExpensesTable: (items, handlerName) => populateTable(DOMElements.removeVariedExpensesTableBody, items, {buttonText: 'Remover', handlerName: handlerName}),
-            populateFixedExpensesTable: (items) => populateTable(DOMElements.fixedExpensesTableBody, items),
-            populateRemoveFixedExpensesTable: (items, handlerName) => populateTable(DOMElements.removeFixedExpensesTableBody, items, {buttonText: 'Remover', handlerName: handlerName}),
-            populateReservaTable: (items) => populateTable(DOMElements.reservaTableBody, items),
-            populateRemoveReservaTable: (items, handlerName) => populateTable(DOMElements.removeReservaTableBody, items, {buttonText: 'Sacar', handlerName: handlerName}),
-            populateYearSelector
-        };
-      })();
-
-      // Módulo de Gerenciamento de Saldo e Entradas de Saldo
-      const SaldoManager = (function () {
-        let _saldo = 0;
-        let _entradasDeSaldo = [];
-
-        const getSaldo = () => _saldo;
-        const getEntradasDeSaldo = () => JSON.parse(JSON.stringify(_entradasDeSaldo));
-
-        const adicionar = (valor, dataEntrada) => {
-          if (isNaN(valor) || valor <= 0) { UIManager.showMessage('Valor para saldo deve ser positivo.', 'error'); return false; }
-          _saldo += valor;
-          const data = dataEntrada ? new Date(dataEntrada + "T00:00:00").toISOString() : new Date().toISOString(); // Adiciona T00:00:00 para input date
-          _entradasDeSaldo.push({ valor: parseFloat(valor), data: data, tipo: 'entradaSaldo', descricao: 'Saldo Adicionado' });
-          UIManager.updateSaldoDisplay(_saldo);
-          return true;
-        };
-
-        // MODIFIQUE A FUNÇÃO 'remover' ABAIXO:
-        const remover = (valor) => {
-          if (isNaN(valor) || valor <= 0) { UIManager.showMessage('Valor para remover do saldo deve ser positivo.', 'error'); return false; }
-          if (valor > _saldo) { UIManager.showMessage('Saldo insuficiente.', 'error'); return false; }
-          _saldo -= valor;
-
-          // ---- INÍCIO DA MODIFICAÇÃO ----
-          // Registrar a remoção como uma transação no histórico de entradas com valor negativo
-          // Isso fará com que os gráficos que somam as 'entradasDeSaldo' reflitam essa remoção.
-          const dataSaida = new Date().toISOString(); // A remoção ocorre na data atual
-          _entradasDeSaldo.push({
-              valor: -parseFloat(valor), // Armazena o valor como negativo
-              data: dataSaida,
-              tipo: 'saidaSaldo', // Novo tipo para diferenciar, se necessário
-              descricao: 'Saldo Removido'
-          });
-          // ---- FIM DA MODIFICAÇÃO ----
-
-          UIManager.updateSaldoDisplay(_saldo);
-          return true;
-        };
-        // FIM DA MODIFICAÇÃO DA FUNÇÃO 'remover'
-
-        const init = (initialSaldo = 0, initialEntradas = []) => {
-            _saldo = initialSaldo;
-            // Garante que todas as entradas (incluindo as de saída que agora podem ser carregadas) sejam processadas
-            _entradasDeSaldo = initialEntradas.map(e => ({ 
-                ...e, 
-                valor: parseFloat(e.valor), // Garante que o valor seja número
-                data: e.data ? new Date(e.data).toISOString() : new Date().toISOString() 
-            }));
-            UIManager.updateSaldoDisplay(_saldo);
-        };
-        return { getSaldo, adicionar, remover, init, getEntradasDeSaldo };
-      })();
-
-      // Módulo de Gerenciamento de Itens (Despesas, Reserva)
-      const ItemManager = function (itemType, saldoManagerInstance, uiUpdaterFunction) {
-        let _items = [];
-        const getItems = () => JSON.parse(JSON.stringify(_items));
-        const calculateTotal = () => _items.reduce((acc, item) => acc + item.valor, 0);
-
-        const addItem = (descricao, valor, dataItem, afetaSaldo = 'debitar') => {
-          if (!descricao || descricao.trim() === '') { UIManager.showMessage(`Descrição para ${itemType} vazia.`, 'error'); return false; }
-          if (isNaN(valor) || valor <= 0) { UIManager.showMessage(`Valor para ${itemType} deve ser positivo.`, 'error'); return false; }
-
-          const dataISO = dataItem && dataItem !== "" ? new Date(dataItem + "T00:00:00").toISOString() : new Date().toISOString();
-
-          if (afetaSaldo === 'debitar') {
-            if (saldoManagerInstance.getSaldo() < valor) { UIManager.showMessage(`Saldo insuficiente para ${itemType}.`, 'error'); return false; }
-            saldoManagerInstance.remover(valor);
-          }
-
-          _items.push({ descricao, valor: parseFloat(valor), data: dataISO, tipo: itemType });
-          uiUpdaterFunction(calculateTotal());
-          return true;
-        };
-
-        const removeItem = (index, afetaSaldoAoRemover = 'creditar') => {
-          if (index < 0 || index >= _items.length) { UIManager.showMessage(`Item ${itemType} inválido.`, 'error'); return false; }
-          const itemRemovido = _items.splice(index, 1)[0];
-
-          if (afetaSaldoAoRemover === 'creditar') {
-            saldoManagerInstance.adicionar(itemRemovido.valor, new Date().toISOString()); // Adiciona de volta ao saldo com a data atual
-          } else if (afetaSaldoAoRemover === 'debitar') { // Caso seja necessário debitar ao remover (menos comum para despesas)
-            saldoManagerInstance.remover(itemRemovido.valor);
-          }
-          uiUpdaterFunction(calculateTotal());
-          return true;
-        };
-        const init = (initialItems = []) => {
-            _items = initialItems.map(item => ({ ...item, data: item.data ? new Date(item.data).toISOString() : new Date().toISOString() }));
-            uiUpdaterFunction(calculateTotal());
-        };
-        return { getItems, addItem, removeItem, calculateTotal, init, itemType };
-      };
-
-      // Instâncias dos Gerenciadores
-      const DespesasVariadasManager = ItemManager('despesaVariada', SaldoManager, UIManager.updateTotalVariedExpenses);
-      const DespesasFixasManager = ItemManager('despesaFixa', SaldoManager, UIManager.updateTotalFixedExpenses);
-      const ReservaManager = ItemManager('reserva', SaldoManager, UIManager.updateTotalReserva);
-
-
-      // Módulo Principal da Aplicação
-      const App = (function () {
-        let currentSelectedYear = new Date().getFullYear();
-
-        const refreshFinancialSummaryAndChart = function() {
-            const totalDespesasVariadas = DespesasVariadasManager.calculateTotal();
-            const totalDespesasFixas = DespesasFixasManager.calculateTotal();
-            const totalReserva = ReservaManager.calculateTotal();
-
-            UIManager.updateTotalVariedExpenses(totalDespesasVariadas);
-            UIManager.updateTotalFixedExpenses(totalDespesasFixas);
-            UIManager.updateTotalReserva(totalReserva);
-
-            const totalAlocado = totalDespesasVariadas + totalDespesasFixas + totalReserva;
-            UIManager.updateTotalAlocadoChartLegend(totalAlocado);
-
-            if (typeof window.updateFinanceChart === 'function') {
-                window.updateFinanceChart({
-                    despesasVariadas: totalDespesasVariadas,
-                    despesasFixas: totalDespesasFixas,
-                    reserva: totalReserva
-                });
-            }
-            refreshAnnualHistoryAndDetailedChart();
-        };
-
-        const getUniqueYearsFromData = () => {
-            const years = new Set();
-            years.add(new Date().getFullYear());
-
-            SaldoManager.getEntradasDeSaldo().forEach(e => years.add(new Date(e.data).getFullYear()));
-            [DespesasVariadasManager, DespesasFixasManager, ReservaManager].forEach(manager => {
-                manager.getItems().forEach(item => years.add(new Date(item.data).getFullYear()));
-            });
-            return Array.from(years).sort((a,b) => b - a);
-        };
-
-        const populateYearSelectorWithOptions = () => {
-            const years = getUniqueYearsFromData();
-            UIManager.populateYearSelector(years, currentSelectedYear);
-        };
-
-        const aggregateDataForYear = (selectedYear) => {
-            const monthlyData = Array(12).fill(null).map(() => ({
-                saldoAdicionado: 0,
-                despesaVariada: 0,
-                despesaFixa: 0,
-                reserva: 0
-            }));
-
-            SaldoManager.getEntradasDeSaldo().forEach(entrada => {
-                const entryDate = new Date(entrada.data);
-                if (entryDate.getFullYear() === selectedYear) {
-                    monthlyData[entryDate.getMonth()].saldoAdicionado += entrada.valor;
-                }
-            });
-
-            const processManagerItems = (manager, typeKey) => {
-                manager.getItems().forEach(item => {
-                    const itemDate = new Date(item.data);
-                    if (itemDate.getFullYear() === selectedYear) {
-                        monthlyData[itemDate.getMonth()][typeKey] += item.valor;
-                    }
-                });
-            };
-
-            processManagerItems(DespesasVariadasManager, 'despesaVariada');
-            processManagerItems(DespesasFixasManager, 'despesaFixa');
-            processManagerItems(ReservaManager, 'reserva');
-
-            return monthlyData;
-        };
-
-        const refreshAnnualHistoryAndDetailedChart = () => {
-            const annualData = aggregateDataForYear(currentSelectedYear);
-            const chartSeries = [
-                { name: 'Saldo Adic.', data: annualData.map(m => m.saldoAdicionado) },
-                { name: 'Desp. Variadas', data: annualData.map(m => m.despesaVariada) },
-                { name: 'Desp. Fixas', data: annualData.map(m => m.despesaFixa) },
-                { name: 'Reserva Adic.', data: annualData.map(m => m.reserva) }
-            ];
-
-            if (typeof window.updateAnnualHistoryChart === 'function') {
-                window.updateAnnualHistoryChart({ series: chartSeries });
-            } else {
-                console.warn('Função window.updateAnnualHistoryChart não encontrada.');
-            }
-
-            if (typeof window.updateNewDetailedMonthlyChart === 'function') {
-                window.updateNewDetailedMonthlyChart({ series: chartSeries });
-            } else {
-                console.warn('Função window.updateNewDetailedMonthlyChart não encontrada.');
-            }
-        };
-
-
-        const downloadCSV = function(items, filename, headers = ["#", "Descrição", "Valor", "Data"]) {
-            if (!items || items.length === 0) { UIManager.showMessage('Não há dados para exportar.', 'info'); return; }
-            let csvContent = "";
-            csvContent += headers.join(",") + "\r\n";
-            items.forEach((item, index) => {
-                const description = `"${String(item.descricao).replace(/"/g, '""')}"`;
-                const value = item.valor.toFixed(2).replace('.', ',');
-                const date = item.data ? new Date(item.data).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' }) : 'N/A';
-                const row = [index + 1, description, value, date].join(",");
-                csvContent += row + "\r\n";
-            });
-            const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement("a");
-            if (link.download !== undefined) {
-                const url = URL.createObjectURL(blob);
-                link.setAttribute("href", url);
-                link.setAttribute("download", filename);
-                link.style.visibility = 'hidden';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                URL.revokeObjectURL(url);
-                UIManager.showMessage(`Arquivo ${filename} baixado!`, 'success');
-            } else {
-                UIManager.showMessage('Seu navegador não suporta o download.', 'warn');
-            }
-        };
-
-        const init = function () {
-          AuthManager.checkAuth();
-          const savedSaldoData = JSON.parse(localStorage.getItem('planejaMaisSaldo_v2')) || { saldo: 0, entradas: [] };
-          SaldoManager.init(savedSaldoData.saldo, savedSaldoData.entradas);
-
-          DespesasVariadasManager.init(JSON.parse(localStorage.getItem('planejaMaisDespesasVariadas_v2')) || []);
-          DespesasFixasManager.init(JSON.parse(localStorage.getItem('planejaMaisDespesasFixas_v2')) || []);
-          ReservaManager.init(JSON.parse(localStorage.getItem('planejaMaisReserva_v2')) || []);
-
-          populateYearSelectorWithOptions();
-          setupEventListeners();
-          refreshFinancialSummaryAndChart();
-        };
-
-        const saveDataToLocalStorage = () => {
-            localStorage.setItem('planejaMaisSaldo_v2', JSON.stringify({
-                saldo: SaldoManager.getSaldo(),
-                entradas: SaldoManager.getEntradasDeSaldo()
-            }));
-            localStorage.setItem('planejaMaisDespesasVariadas_v2', JSON.stringify(DespesasVariadasManager.getItems()));
-            localStorage.setItem('planejaMaisDespesasFixas_v2', JSON.stringify(DespesasFixasManager.getItems()));
-            localStorage.setItem('planejaMaisReserva_v2', JSON.stringify(ReservaManager.getItems()));
-            console.log("Dados salvos no localStorage (v2 com datas)");
-        };
-
-        const setupEventListeners = function () {
-          document.getElementById('logoutButton')?.addEventListener('click', (e) => { e.preventDefault(); AuthManager.logout(); });
-          document.getElementById('salaryForm')?.addEventListener('submit', handleAddSalary);
-          document.getElementById('removeSalaryForm')?.addEventListener('submit', handleRemoveSalary);
-
-          document.getElementById('variedExpenseForm')?.addEventListener('submit', handleAddVariedExpense);
-          document.getElementById('viewVariedExpensesModal')?.addEventListener('show.bs.modal', () => UIManager.populateVariedExpensesTable(DespesasVariadasManager.getItems()));
-          document.getElementById('removeVariedExpenseModal')?.addEventListener('show.bs.modal', () => UIManager.populateRemoveVariedExpensesTable(DespesasVariadasManager.getItems(), 'App.removeDespesaVariada'));
-
-          document.getElementById('fixedExpenseForm')?.addEventListener('submit', handleAddFixedExpense);
-          document.getElementById('viewFixedExpensesModal')?.addEventListener('show.bs.modal', () => UIManager.populateFixedExpensesTable(DespesasFixasManager.getItems()));
-          document.getElementById('removeFixedExpenseModal')?.addEventListener('show.bs.modal', () => UIManager.populateRemoveFixedExpensesTable(DespesasFixasManager.getItems(), 'App.removeDespesaFixa'));
-
-          document.getElementById('formAddReserva')?.addEventListener('submit', handleAddReserva);
-          document.getElementById('viewReservaModal')?.addEventListener('show.bs.modal', () => UIManager.populateReservaTable(ReservaManager.getItems()));
-          document.getElementById('removeReservaModal')?.addEventListener('show.bs.modal', () => UIManager.populateRemoveReservaTable(ReservaManager.getItems(), 'App.removeReserva'));
-
-          document.getElementById('downloadVariedExpensesCSV')?.addEventListener('click', () => downloadCSV(DespesasVariadasManager.getItems(), 'despesas_variadas.csv'));
-          document.getElementById('downloadFixedExpensesCSV')?.addEventListener('click', () => downloadCSV(DespesasFixasManager.getItems(), 'despesas_fixas.csv'));
-          document.getElementById('downloadReservaCSV')?.addEventListener('click', () => downloadCSV(ReservaManager.getItems(), 'reserva.csv'));
-
-          document.getElementById('yearSelector')?.addEventListener('change', function(e) {
-            currentSelectedYear = parseInt(e.target.value);
-            refreshAnnualHistoryAndDetailedChart();
-          });
-        };
-
-        const getDateFromInput = (inputId) => {
-            const dateInput = document.getElementById(inputId);
-            return dateInput && dateInput.value ? dateInput.value : null;
-        };
-
-        const handleAddSalary = function (e) {
-            e.preventDefault();
-            const form = e.target;
-            if (!form.checkValidity()) { e.stopPropagation(); form.classList.add('was-validated'); UIManager.showMessage('Corrija o formulário.', 'error'); return; }
-            form.classList.remove('was-validated');
-            try {
-                const valor = parseFloat(document.getElementById('salaryAmount').value);
-                const dataInput = getDateFromInput('salaryDate');
-                if (SaldoManager.adicionar(valor, dataInput)) {
-                    UIManager.showMessage('Saldo adicionado!', 'success');
-                    bootstrap.Modal.getInstance(document.getElementById('addSalaryModal')).hide();
-                    form.reset();
-                    refreshFinancialSummaryAndChart();
-                    saveDataToLocalStorage();
-                }
-            } catch (error) { console.error('Erro ao adicionar saldo:', error); UIManager.showMessage('Erro ao adicionar saldo.', 'error');}
-        };
-
-        const handleRemoveSalary = function (e) {
-            e.preventDefault();
-            const form = e.target;
-            if (!form.checkValidity()) { e.stopPropagation(); form.classList.add('was-validated'); UIManager.showMessage('Corrija o formulário.', 'error'); return; }
-            form.classList.remove('was-validated');
-            try {
-                const valor = parseFloat(document.getElementById('removeSalaryAmount').value);
-                if (SaldoManager.remover(valor)) {
-                    UIManager.showMessage('Saldo removido!', 'success');
-                    bootstrap.Modal.getInstance(document.getElementById('removeSalaryModal')).hide();
-                    form.reset();
-                    saveDataToLocalStorage();
-                    refreshFinancialSummaryAndChart();
-                }
-            } catch (error) { console.error('Erro ao remover saldo:', error); UIManager.showMessage('Erro ao remover saldo.', 'error');}
-        };
-
-        const handleAddVariedExpense = function(e) {
-            e.preventDefault();
-            const form = e.target;
-            if (!form.checkValidity()) { e.stopPropagation(); form.classList.add('was-validated'); UIManager.showMessage('Corrija o formulário.', 'error'); return; }
-            form.classList.remove('was-validated');
-            try {
-                const valor = parseFloat(document.getElementById('variedExpenseAmount').value);
-                const descricao = document.getElementById('variedExpenseDesc').value;
-                const dataInput = getDateFromInput('variedExpenseDate');
-                if(DespesasVariadasManager.addItem(descricao, valor, dataInput, 'debitar')) {
-                    UIManager.showMessage('Despesa Variada adicionada!', 'success');
-                    bootstrap.Modal.getInstance(document.getElementById('addVariedExpenseModal')).hide();
-                    form.reset();
-                    refreshFinancialSummaryAndChart();
-                    saveDataToLocalStorage();
-                }
-            } catch (error) { console.error('Erro ao adicionar despesa variada:', error); UIManager.showMessage('Erro ao adicionar despesa variada.', 'error');}
-        };
-
-        const removeDespesaVariada = function(index) {
-            if(DespesasVariadasManager.removeItem(index, 'creditar')) {
-                UIManager.showMessage('Despesa Variada removida!', 'success');
-                refreshFinancialSummaryAndChart();
-                saveDataToLocalStorage();
-                UIManager.populateRemoveVariedExpensesTable(DespesasVariadasManager.getItems(), 'App.removeDespesaVariada');
-            }
-        };
-
-        const handleAddFixedExpense = function(e) {
-            e.preventDefault();
-            const form = e.target;
-            if (!form.checkValidity()) { e.stopPropagation(); form.classList.add('was-validated'); UIManager.showMessage('Corrija o formulário.', 'error'); return; }
-            form.classList.remove('was-validated');
-            try {
-                const valor = parseFloat(document.getElementById('fixedExpenseAmount').value);
-                const descricao = document.getElementById('fixedExpenseDesc').value;
-                const dataInput = getDateFromInput('fixedExpenseDate');
-                if(DespesasFixasManager.addItem(descricao, valor, dataInput, 'debitar')) {
-                    UIManager.showMessage('Despesa fixa adicionada!', 'success');
-                    bootstrap.Modal.getInstance(document.getElementById('addFixedExpenseModal')).hide();
-                    form.reset();
-                    refreshFinancialSummaryAndChart();
-                    saveDataToLocalStorage();
-                }
-            } catch (error) { console.error('Erro ao adicionar despesa fixa:', error); UIManager.showMessage('Erro ao adicionar despesa fixa.', 'error');}
-        };
-
-        const removeDespesaFixa = function(index) {
-            if(DespesasFixasManager.removeItem(index, 'creditar')) {
-                UIManager.showMessage('Despesa fixa removida!', 'success');
-                refreshFinancialSummaryAndChart();
-                saveDataToLocalStorage();
-                UIManager.populateRemoveFixedExpensesTable(DespesasFixasManager.getItems(), 'App.removeDespesaFixa');
-            }
-        };
-
-        const handleAddReserva = function(e) {
-            e.preventDefault();
-            const form = e.target;
-            if (!form.checkValidity()) { e.stopPropagation(); form.classList.add('was-validated'); UIManager.showMessage('Corrija o formulário.', 'error'); return; }
-            form.classList.remove('was-validated');
-            try {
-                const valor = parseFloat(document.getElementById('reservaValue').value);
-                const descricao = document.getElementById('reservaDescription').value;
-                const dataInput = getDateFromInput('reservaDate');
-                if(ReservaManager.addItem(descricao, valor, dataInput, 'debitar')) {
-                    UIManager.showMessage('Valor adicionado à Reserva e debitado do saldo!', 'success');
-                    bootstrap.Modal.getInstance(document.getElementById('addReservaModal')).hide();
-                    form.reset();
-                    refreshFinancialSummaryAndChart();
-                    saveDataToLocalStorage();
-                }
-            } catch (error) {
-                console.error('Erro ao adicionar à reserva:', error);
-                UIManager.showMessage('Erro ao adicionar à reserva.', 'error');
-            }
-        };
-
-        const removeReserva = function(index) {
-            if(ReservaManager.removeItem(index, 'creditar')) {
-                UIManager.showMessage('Valor sacado da Reserva e adicionado ao saldo!', 'success');
-                refreshFinancialSummaryAndChart();
-                saveDataToLocalStorage();
-                UIManager.populateRemoveReservaTable(ReservaManager.getItems(), 'App.removeReserva');
-            }
-        };
-
-        return { init, removeDespesaVariada, removeDespesaFixa, removeReserva };
-      })();
-
-      document.addEventListener('DOMContentLoaded', App.init);
-    </script>
-  </body>
 </html>
