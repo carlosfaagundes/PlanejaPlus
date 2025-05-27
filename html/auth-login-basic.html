@@ -131,33 +131,54 @@
         }
 
         try {
-          const response = await fetch('http://127.0.0.1:5001/api/login', { // URL do seu backend Flask
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ loginCredential, password }),
-          });
+            // 3. A chamada FETCH para o backend
+            const response = await fetch('ttps://planejaplus-api-carlos.onrender.com', { // SUBSTITUA PELA URL REAL DO SEU BACKEND
+                method: 'POST', // Método HTTP: POST para enviar dados para processamento/criação
+                headers: {
+                    // Cabeçalhos da requisição:
+                    // 'Content-Type': 'application/json' informa ao backend que estamos enviando dados em formato JSON.
+                    'Content-Type': 'application/json',
+                },
+                // Corpo da requisição:
+                // JSON.stringify() converte um objeto JavaScript em uma string no formato JSON.
+                body: JSON.stringify({ 
+                    loginCredential: loginCredential, 
+                    password: password 
+                }),
+            });
 
-          const data = await response.json();
+            // 4. Processar a RESPOSTA do backend
+            // response.json() lê o corpo da resposta do backend e o converte de JSON para um objeto JavaScript.
+            // Isso também é uma operação assíncrona, por isso o 'await'.
+            const data = await response.json(); 
 
-          if (response.ok) { // Ex: status 200
-            localStorage.setItem('auth', 'true'); // Sinaliza que está autenticado
-            localStorage.setItem('loggedInUser', data.username); // Guarda o nome do usuário
-            
-            feedbackElement.textContent = data.message || 'Login bem-sucedido! Redirecionando...';
-            feedbackElement.classList.add('text-success');
-            setTimeout(() => {
-              window.location.href = 'index.html';
-            }, 1000);
-          } else { // Erros como 400, 401
-            feedbackElement.textContent = data.message || 'Falha no login. Verifique seus dados.';
-            feedbackElement.classList.add('text-danger');
-          }
+            // 5. Verificar se a requisição foi bem-sucedida
+            if (response.ok) { // 'ok' é true se o status HTTP for 200-299 (sucesso)
+                // Backend confirmou o login!
+                localStorage.setItem('auth', 'true'); 
+                localStorage.setItem('loggedInUser', data.username); // 'data.username' veio da resposta do backend
+
+                feedbackElement.textContent = data.message || 'Login bem-sucedido! Redirecionando...';
+                feedbackElement.classList.remove('text-danger');
+                feedbackElement.classList.add('text-success');
+                
+                setTimeout(() => { 
+                    window.location.href = 'index.html'; // Redireciona para o dashboard
+                }, 1000);
+
+            } else {
+                // O backend retornou um erro (ex: credenciais inválidas, usuário não encontrado)
+                // 'data.message' contém a mensagem de erro enviada pelo backend
+                feedbackElement.textContent = data.message || 'Falha no login. Verifique seus dados.';
+                feedbackElement.classList.add('text-danger');
+            }
+
         } catch (error) {
-          console.error('Erro ao tentar fazer login:', error);
-          feedbackElement.textContent = 'Ocorreu um erro de conexão com o servidor. Tente novamente.';
-          feedbackElement.classList.add('text-danger');
+            // 6. Tratar erros de rede ou falhas na própria chamada fetch
+            // Isso acontece se o servidor backend estiver offline, não houver conexão com a internet, etc.
+            console.error('Erro na requisição de login:', error);
+            feedbackElement.textContent = 'Erro de conexão com o servidor. Tente novamente.';
+            feedbackElement.classList.add('text-danger');
         }
       });
       
