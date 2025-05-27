@@ -172,12 +172,12 @@
         }
 
         try {
-          const response = await fetch('https://planejaplus-api-carlos.onrender.com', { // URL do seu backend Flask
-            method: 'POST',
-            headers: {
+          const response = await fetch('https://planejaplus-api-carlos.onrender.com/api/register', { 
+          method: 'POST',
+          headers: {
               'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ username, email, password }),
+          },
+          body: JSON.stringify({ username, email, password }),
           });
 
           const data = await response.json();

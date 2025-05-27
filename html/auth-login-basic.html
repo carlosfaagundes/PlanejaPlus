@@ -132,19 +132,15 @@
 
         try {
             // 3. A chamada FETCH para o backend
-            const response = await fetch('https://planejaplus-api-carlos.onrender.com', { // SUBSTITUA PELA URL REAL DO SEU BACKEND
-                method: 'POST', // Método HTTP: POST para enviar dados para processamento/criação
-                headers: {
-                    // Cabeçalhos da requisição:
-                    // 'Content-Type': 'application/json' informa ao backend que estamos enviando dados em formato JSON.
-                    'Content-Type': 'application/json',
-                },
-                // Corpo da requisição:
-                // JSON.stringify() converte um objeto JavaScript em uma string no formato JSON.
-                body: JSON.stringify({ 
-                    loginCredential: loginCredential, 
-                    password: password 
-                }),
+            const response = await fetch('https://planejaplus-api-carlos.onrender.com/api/login', { 
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                loginCredential: loginCredential, 
+                password: password 
+            }),
             });
 
             // 4. Processar a RESPOSTA do backend
