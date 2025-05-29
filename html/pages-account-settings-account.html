@@ -13,34 +13,25 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-
     <title>Meu Perfil | PLANEJA+</title>
-
     <meta name="description" content="Gerencie suas informações de perfil no PLANEJA+" />
-
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-
     <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
-
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-
     <script src="../assets/vendor/js/helpers.js"></script>
     <script src="../assets/js/config.js"></script>
     <script>
-      // Verifica autenticação e redireciona se não estiver logado
       if (localStorage.getItem('auth') !== 'true') {
-        window.location.href = 'auth-login-basic.html'; // Corrigido para o nome da sua página de login
+        window.location.href = 'auth-login-basic.html';
       }
     </script>
   </head>
@@ -70,18 +61,19 @@
               </a> 
             </li>
             <li class="menu-header small text-uppercase"> <span class="menu-header-text">MENU</span> </li>
-            <li class="menu-item active open"> <a href="javascript:void(0);" class="menu-link menu-toggle"> 
-                <i class="menu-icon tf-icons bx bx-dock-top"></i> 
-                <div data-i18n="Account Settings">Configurações</div> 
+            <li class="menu-item active open">
+              <a href="javascript:void(0);" class="menu-link menu-toggle"> 
+                <i class="menu-icon tf-icons bx bx-cog"></i> <div data-i18n="Account Settings">Configurações</div> 
               </a> 
               <ul class="menu-sub"> 
-                <li class="menu-item active"> <a href="pages-account-settings-account.html" class="menu-link"> 
-                    <div data-i18n="Account">Perfil</div> 
+                <li class="menu-item active"> 
+                  <a href="pages-account-settings-account.html" class="menu-link"> 
+                    <div data-i18n="Account">Meu Perfil</div> 
                   </a> 
                 </li> 
-                </ul> 
+              </ul> 
             </li>
-            </ul>
+          </ul>
         </aside>
         <div class="layout-page">
           <nav
@@ -97,7 +89,8 @@
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <li class="nav-item lh-1 me-3">
-                  <span class="fw-semibold">PLANEJA+</span> </li>
+                  <span class="fw-semibold fs-5">PLANEJA+</span>
+                </li>
                  <li class="nav-item me-2 me-lg-0">
                     <a class="nav-link style-switcher-toggle hide-arrow" href="javascript:void(0);" id="themeSwitcher">
                         <i class="bx bx-sm"></i>
@@ -106,7 +99,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="assets\img\avatars\-kratos.jpg" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="../assets/img/avatars/1.png" alt="Avatar do Usuário" class="w-px-40 h-auto rounded-circle" id="navbarUserAvatar" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -115,7 +108,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="assets\img\avatars\-kratos.jpg" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="../assets/img/avatars/1.png" alt="Avatar do Usuário no Dropdown" class="w-px-40 h-auto rounded-circle" id="dropdownUserAvatar" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -144,13 +137,14 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" id="logoutButton"> <i class="bx bx-power-off me-2"></i>
+                      <a class="dropdown-item" href="#" id="logoutButton">
+                        <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
                     </li>
                   </ul>
                 </li>
-                </ul>
+              </ul>
             </div>
           </nav>
           <div class="content-wrapper">
@@ -163,13 +157,34 @@
                     <h5 class="card-header">Detalhes do Perfil</h5>
                     <div class="card-body">
                       <div class="d-flex align-items-start align-items-sm-center gap-4">
-                        <div class="avatar avatar-xl avatar-online">
-                           <i class='bx bxs-user-circle bx-lg' style="font-size: 80px; color: #696cff;"></i>
-                        </div>
+                        <img
+                          src="../assets/img/avatars/1.png" 
+                          alt="User Avatar"
+                          class="d-block rounded"
+                          height="100"
+                          width="100"
+                          id="uploadedAvatarPreview"
+                        />
                         <div class="button-wrapper">
-                          <p class="text-muted mb-0" id="profileUsernameDisplay"></p>
-                          <p class="text-muted mb-0" id="profileEmailDisplay"></p>
-                           </div>
+                          <label for="uploadAvatarInput" class="btn btn-primary me-2 mb-3" tabindex="0">
+                            <span class="d-none d-sm-block">Carregar Nova Foto</span>
+                            <i class="bx bx-upload d-block d-sm-none"></i>
+                            <input
+                              type="file"
+                              id="uploadAvatarInput"
+                              class="account-file-input"
+                              hidden
+                              accept="image/png, image/jpeg, image/gif"
+                            />
+                          </label>
+                          <button type="button" class="btn btn-outline-secondary account-image-reset mb-3" id="resetAvatarButton">
+                            <i class="bx bx-reset d-block d-sm-none"></i>
+                            <span class="d-none d-sm-block">Resetar</span>
+                          </button>
+                          <p class="text-muted mb-0">JPG, GIF ou PNG. Tamanho máximo de 1MB.</p>
+                          <p class="text-muted mb-0" id="profileUsernameDisplay" style="font-weight: bold; margin-top: 0.5rem;"></p>
+                          <p class="text-muted mb-0" id="profileEmailDisplay" style="margin-top: 0.25rem;"></p>
+                        </div>
                       </div>
                     </div>
                     <hr class="my-0" />
@@ -217,14 +232,14 @@
                           </div>
                         </div>
                         <div class="mt-2">
-                          <button type="submit" class="btn btn-primary me-2" id="saveProfileChanges">Salvar Alterações</button>
-                          <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
+                          <button type="submit" class="btn btn-primary me-2" id="saveProfileChangesButton">Salvar Alterações</button>
+                          <button type="reset" class="btn btn-outline-secondary" id="cancelProfileChangesButton">Cancelar</button>
                         </div>
                       </form>
                     </div>
-                    </div>
+                  </div>
 
-                  <!-- <div class="card">
+                  <div class="card">
                     <h5 class="card-header">Deletar Conta</h5>
                     <div class="card-body">
                       <div class="mb-3 col-12 mb-0">
@@ -239,16 +254,16 @@
                             class="form-check-input"
                             type="checkbox"
                             name="accountActivation"
-                            id="accountActivation"
+                            id="accountActivationCheckbox" 
                           />
-                          <label class="form-check-label" for="accountActivation"
+                          <label class="form-check-label" for="accountActivationCheckbox"
                             >Confirmo a desativação da minha conta</label
                           >
                         </div>
                         <button type="submit" class="btn btn-danger deactivate-account" id="deactivateAccountButton">Desativar Conta</button>
                       </form>
                     </div>
-                  </div> -->
+                  </div>
                 </div>
               </div>
             </div>
@@ -264,167 +279,266 @@
     <script src="../assets/vendor/js/bootstrap.js"></script>
     <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="../assets/vendor/js/menu.js"></script>
-    
     <script src="../assets/js/main.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Lógica de Autenticação e Navbar (similar ao index.html)
-            if (localStorage.getItem('auth') !== 'true') {
+    document.addEventListener('DOMContentLoaded', function () {
+        const defaultAvatarSrc = '../assets/img/avatars/1.png'; // Caminho para um avatar padrão
+
+        // --- Lógica de Autenticação e Navbar ---
+        if (localStorage.getItem('auth') !== 'true') {
+            window.location.href = 'auth-login-basic.html';
+            return; 
+        }
+
+        const loggedInUserName = localStorage.getItem('loggedInUser');
+        const navbarUserNameEl = document.getElementById('navbarUserName');
+        const navbarUserRoleEl = document.getElementById('navbarUserRole');
+        const navbarUserAvatarEl = document.getElementById('navbarUserAvatar');
+        const dropdownUserAvatarEl = document.getElementById('dropdownUserAvatar');
+        
+        const userProfileKey = `userProfileData-${loggedInUserName}`;
+        const savedProfileData = JSON.parse(localStorage.getItem(userProfileKey)) || {};
+
+        if (loggedInUserName && navbarUserNameEl && navbarUserRoleEl) {
+            navbarUserNameEl.textContent = loggedInUserName;
+            navbarUserRoleEl.textContent = loggedInUserName.toLowerCase() === 'admin' ? 'Admin' : 'Usuário';
+        }
+        
+        // Atualiza avatares na navbar com a foto do perfil salva, se existir
+        if (savedProfileData.avatarPreviewSrc) {
+            if(navbarUserAvatarEl) navbarUserAvatarEl.src = savedProfileData.avatarPreviewSrc;
+            if(dropdownUserAvatarEl) dropdownUserAvatarEl.src = savedProfileData.avatarPreviewSrc;
+        } else {
+            if(navbarUserAvatarEl) navbarUserAvatarEl.src = defaultAvatarSrc;
+            if(dropdownUserAvatarEl) dropdownUserAvatarEl.src = defaultAvatarSrc;
+        }
+            
+        const logoutButton = document.getElementById('logoutButton');
+        if(logoutButton) {
+            logoutButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                localStorage.removeItem('auth');
+                localStorage.removeItem('loggedInUser');
+                // Considerar remover todos os dados do usuário ao fazer logout, incluindo perfil e financeiros
+                // localStorage.removeItem(userProfileKey); 
+                // ... remover chaves financeiras ...
+                alert('Você foi desconectado.');
                 window.location.href = 'auth-login-basic.html';
-                return; // Interrompe a execução se não estiver autenticado
-            }
+            });
+        }
 
-            const loggedInUserName = localStorage.getItem('loggedInUser');
-            const navbarUserName = document.getElementById('navbarUserName');
-            const navbarUserRole = document.getElementById('navbarUserRole');
-            
-            if (loggedInUserName && navbarUserName && navbarUserRole) {
-                navbarUserName.textContent = loggedInUserName;
-                navbarUserRole.textContent = loggedInUserName.toLowerCase() === 'admin' ? 'Admin' : 'Usuário';
-            }
-            
-            const logoutButton = document.getElementById('logoutButton');
-            if(logoutButton) {
-                logoutButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    localStorage.removeItem('auth');
-                    localStorage.removeItem('loggedInUser'); // Limpa também o nome do usuário
-                    // localStorage.removeItem('userProfileData-' + loggedInUserName); // Se estiver salvando perfil
-                    alert('Você foi desconectado.');
-                    window.location.href = 'auth-login-basic.html';
-                });
-            }
+        const resetDataButton = document.getElementById('resetAllDataButton');
+        if(resetDataButton && loggedInUserName){ // Só adiciona se o usuário estiver logado
+            resetDataButton.addEventListener('click', function(e){
+                e.preventDefault();
+                if (confirm("Tem certeza de que deseja apagar TODOS os dados financeiros para o usuário '" + loggedInUserName + "'? Esta ação não pode ser desfeita.")) {
+                    localStorage.removeItem(loggedInUserName + '_planejaMaisSaldo_v2');
+                    localStorage.removeItem(loggedInUserName + '_planejaMaisDespesasVariadas_v2');
+                    localStorage.removeItem(loggedInUserName + '_planejaMaisDespesasFixas_v2');
+                    localStorage.removeItem(loggedInUserName + '_planejaMaisReserva_v2');
+                    alert("Dados financeiros do usuário foram removidos. Por favor, atualize a página do dashboard para ver as mudanças.");
+                }
+            });
+        }
 
-            const resetDataButton = document.getElementById('resetAllDataButton');
-            if(resetDataButton){
-                resetDataButton.addEventListener('click', function(e){
-                    e.preventDefault();
-                    if (confirm("Tem certeza de que deseja apagar TODOS os dados financeiros para o usuário '" + loggedInUserName + "'? Esta ação não pode ser desfeita.")) {
+        // --- Lógica da Página de Perfil ---
+        const profileUsernameDisplayEl = document.getElementById('profileUsernameDisplay');
+        const profileEmailDisplayEl = document.getElementById('profileEmailDisplay');
+        const firstNameInputEl = document.getElementById('firstName');
+        const lastNameInputEl = document.getElementById('lastName');
+        const emailInputEl = document.getElementById('email');
+        const phoneNumberInputEl = document.getElementById('phoneNumber');
+        const formAccountSettingsEl = document.getElementById('formAccountSettings');
+        const saveProfileChangesButtonEl = document.getElementById('saveProfileChangesButton'); // ID adicionado ao botão
+        const cancelProfileChangesButtonEl = document.getElementById('cancelProfileChangesButton'); // ID adicionado ao botão
+
+        const uploadedAvatarPreviewEl = document.getElementById('uploadedAvatarPreview');
+        const uploadAvatarInputEl = document.getElementById('uploadAvatarInput');
+        const resetAvatarButtonEl = document.getElementById('resetAvatarButton');
+        
+        let currentAvatarSrc = defaultAvatarSrc; // Para o botão de resetar avatar
+
+        function loadProfileData() {
+            if (loggedInUserName) {
+                if(profileUsernameDisplayEl) profileUsernameDisplayEl.textContent = `Username: ${loggedInUserName}`;
+                
+                const profileData = JSON.parse(localStorage.getItem(userProfileKey)) || {};
+
+                if(firstNameInputEl) firstNameInputEl.value = profileData.firstName || '';
+                if(lastNameInputEl) lastNameInputEl.value = profileData.lastName || '';
+                if(emailInputEl) emailInputEl.value = profileData.email || '';
+                
+                if(profileEmailDisplayEl) {
+                    profileEmailDisplayEl.textContent = profileData.email ? `E-mail: ${profileData.email}` : `E-mail: (não definido)`;
+                }
+
+                if(phoneNumberInputEl) phoneNumberInputEl.value = profileData.phoneNumber || '';
+
+                if (uploadedAvatarPreviewEl) {
+                    if (profileData.avatarPreviewSrc) {
+                        uploadedAvatarPreviewEl.src = profileData.avatarPreviewSrc;
+                        currentAvatarSrc = profileData.avatarPreviewSrc;
+                    } else {
+                        uploadedAvatarPreviewEl.src = defaultAvatarSrc;
+                        currentAvatarSrc = defaultAvatarSrc;
+                    }
+                }
+            }
+        }
+
+        loadProfileData();
+
+        if (uploadAvatarInputEl && uploadedAvatarPreviewEl) {
+            uploadAvatarInputEl.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file && file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        uploadedAvatarPreviewEl.src = e.target.result;
+                        if(resetAvatarButtonEl) resetAvatarButtonEl.classList.remove('d-none');
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    alert('Por favor, selecione um arquivo de imagem válido (JPG, PNG, GIF).');
+                    uploadAvatarInputEl.value = ''; // Limpa a seleção inválida
+                }
+            });
+        }
+
+        if (resetAvatarButtonEl && uploadedAvatarPreviewEl && uploadAvatarInputEl) {
+            resetAvatarButtonEl.addEventListener('click', () => {
+                uploadedAvatarPreviewEl.src = currentAvatarSrc; // Volta para o avatar salvo/padrão
+                uploadAvatarInputEl.value = ''; // Limpa a seleção do input file
+            });
+        }
+
+        if (formAccountSettingsEl) { // Verificando se o formulário existe
+             formAccountSettingsEl.addEventListener('submit', async function (event) { // Adicionado async
+                event.preventDefault();
+                if (!loggedInUserName) {
+                    alert('Erro: Usuário não identificado para salvar o perfil.');
+                    return;
+                }
+
+                const profileDataToSave = {
+                    firstName: firstNameInputEl ? firstNameInputEl.value : '',
+                    lastName: lastNameInputEl ? lastNameInputEl.value : '',
+                    email: emailInputEl ? emailInputEl.value : '',
+                    phoneNumber: phoneNumberInputEl ? phoneNumberInputEl.value : '',
+                    avatarPreviewSrc: uploadedAvatarPreviewEl.src // Salva o src da imagem (pode ser dataURL ou URL)
+                };
+
+                // Lógica de upload do arquivo de avatar real para o backend
+                const avatarFile = uploadAvatarInputEl.files[0];
+                if (avatarFile) {
+                    const formData = new FormData();
+                    formData.append('avatar', avatarFile);
+                    // Adicione outros dados do perfil ao formData se o backend os esperar juntos
+                    // formData.append('firstName', profileDataToSave.firstName); 
+                    // ...
+
+                    try {
+                        // const token = localStorage.getItem('authToken'); // NECESSÁRIO QUANDO A AUTENTICAÇÃO FOR BASEADA EM TOKEN
+                        console.log("Enviando avatar para o backend (simulação)...");
+                        // DESCOMENTE E AJUSTE QUANDO O ENDPOINT DO BACKEND ESTIVER PRONTO
+                        /* const response = await fetch('https://SUA_URL_BACKEND.onrender.com/api/user/profile/avatar', {
+                            method: 'POST',
+                            // headers: { 'Authorization': `Bearer ${token}` }, // Não defina Content-Type aqui para FormData
+                            body: formData,
+                        });
+                        const result = await response.json();
+
+                        if (response.ok) {
+                            alert('Foto de perfil atualizada com sucesso no servidor!');
+                            profileDataToSave.avatarPreviewSrc = result.newAvatarUrl; // Supondo que o backend retorne a nova URL
+                            currentAvatarSrc = result.newAvatarUrl;
+                            if(navbarUserAvatarEl) navbarUserAvatarEl.src = currentAvatarSrc;
+                            if(dropdownUserAvatarEl) dropdownUserAvatarEl.src = currentAvatarSrc;
+                        } else {
+                            alert('Erro ao atualizar foto no servidor: ' + result.message);
+                            // Reverte a pré-visualização se o upload falhar? Ou mantém?
+                            uploadedAvatarPreviewEl.src = currentAvatarSrc; 
+                        }
+                        */
+                    } catch (error) {
+                        console.error("Erro ao enviar avatar:", error);
+                        alert('Erro de conexão ao tentar enviar avatar.');
+                        uploadedAvatarPreviewEl.src = currentAvatarSrc; // Reverte em caso de erro de rede
+                    }
+                }
+                
+                // Salva todos os dados do perfil (incluindo o src do avatar para preview local) no localStorage
+                localStorage.setItem(userProfileKey, JSON.stringify(profileDataToSave));
+                
+                if(profileEmailDisplayEl && profileDataToSave.email) profileEmailDisplayEl.textContent = `E-mail: ${profileDataToSave.email}`;
+                
+                alert('Alterações do perfil salvas com sucesso (localmente)!');
+            });
+        }
+        
+        if(cancelProfileChangesButtonEl) {
+            cancelProfileChangesButtonEl.addEventListener('click', () => {
+                loadProfileData(); // Recarrega os dados originais/salvos
+                alert('Alterações canceladas.');
+            });
+        }
+
+        // Lógica para "Desativar Conta" (apenas UI por enquanto)
+        const deactivateAccountButtonEl = document.getElementById('deactivateAccountButton');
+        const accountActivationCheckboxEl = document.getElementById('accountActivationCheckbox');
+
+        if(deactivateAccountButtonEl && accountActivationCheckboxEl){
+            deactivateAccountButtonEl.addEventListener('click', function(){
+                if(accountActivationCheckboxEl.checked){
+                    if(confirm("Esta é sua última chance. Tem certeza ABSOLUTA que deseja desativar sua conta?")){
+                        alert("Conta desativada (simulação). Você será desconectado.");
+                        // No futuro: chamar API do backend para desativar a conta
+                        // localStorage.clear(); // Limpa tudo
+                        localStorage.removeItem('auth');
+                        localStorage.removeItem('loggedInUser');
+                        localStorage.removeItem(userProfileKey); // Remove dados do perfil
+                        // Removeria também todos os dados financeiros específicos do usuário
                         localStorage.removeItem(loggedInUserName + '_planejaMaisSaldo_v2');
                         localStorage.removeItem(loggedInUserName + '_planejaMaisDespesasVariadas_v2');
                         localStorage.removeItem(loggedInUserName + '_planejaMaisDespesasFixas_v2');
                         localStorage.removeItem(loggedInUserName + '_planejaMaisReserva_v2');
-                        alert("Dados financeiros do usuário foram removidos. Por favor, atualize a página do dashboard para ver as mudanças.");
-                        // Não recarrega esta página, pois o usuário pode querer continuar aqui.
-                        // A atualização será vista no dashboard.
+                        window.location.href = 'auth-login-basic.html';
                     }
-                });
-            }
-
-            // Lógica da Página de Perfil
-            const profileUsernameDisplay = document.getElementById('profileUsernameDisplay');
-            const profileEmailDisplay = document.getElementById('profileEmailDisplay');
-            const firstNameInput = document.getElementById('firstName');
-            const lastNameInput = document.getElementById('lastName');
-            const emailInput = document.getElementById('email');
-            const phoneNumberInput = document.getElementById('phoneNumber');
-            const saveProfileChangesButton = document.getElementById('saveProfileChanges');
-            const formAccountSettings = document.getElementById('formAccountSettings');
-            const deactivateAccountButton = document.getElementById('deactivateAccountButton');
-            const accountActivationCheckbox = document.getElementById('accountActivation');
-
-            // Carregar dados do perfil (simulado com localStorage)
-            function loadProfileData() {
-                if (loggedInUserName) {
-                    if(profileUsernameDisplay) profileUsernameDisplay.textContent = `Username: ${loggedInUserName}`;
-                    
-                    // Tenta carregar dados do perfil salvos para este usuário
-                    const userProfileKey = `userProfileData-${loggedInUserName}`;
-                    const savedProfileData = JSON.parse(localStorage.getItem(userProfileKey)) || {};
-
-                    if(firstNameInput) firstNameInput.value = savedProfileData.firstName || '';
-                    if(lastNameInput) lastNameInput.value = savedProfileData.lastName || '';
-                    if(emailInput) emailInput.value = savedProfileData.email || ''; // Ou buscar do backend se disponível
-                    if(profileEmailDisplay && emailInput.value) profileEmailDisplay.textContent = `E-mail: ${emailInput.value}`;
-                    else if(profileEmailDisplay) profileEmailDisplay.textContent = `E-mail: (não definido)`;
-
-
-                    if(phoneNumberInput) phoneNumberInput.value = savedProfileData.phoneNumber || '';
-                }
-            }
-
-            loadProfileData();
-
-            // Salvar alterações do perfil (simulado com localStorage)
-            if (formAccountSettings) {
-                formAccountSettings.addEventListener('submit', function (event) {
-                    event.preventDefault();
-                    if (!loggedInUserName) {
-                        alert('Erro: Usuário não identificado para salvar o perfil.');
-                        return;
-                    }
-
-                    const profileData = {
-                        firstName: firstNameInput ? firstNameInput.value : '',
-                        lastName: lastNameInput ? lastNameInput.value : '',
-                        email: emailInput ? emailInput.value : '',
-                        phoneNumber: phoneNumberInput ? phoneNumberInput.value : ''
-                    };
-
-                    const userProfileKey = `userProfileData-${loggedInUserName}`;
-                    localStorage.setItem(userProfileKey, JSON.stringify(profileData));
-                    
-                    // Atualiza o email exibido se foi alterado
-                    if(profileEmailDisplay && profileData.email) profileEmailDisplay.textContent = `E-mail: ${profileData.email}`;
-
-
-                    alert('Alterações do perfil salvas com sucesso (localmente)!');
-                    // Aqui você faria uma chamada fetch para o backend no futuro:
-                    // fetch('/api/user/profile', { method: 'PUT', body: JSON.stringify(profileData), headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ...'} })
-                    // .then(...)
-                });
-            }
-            
-            // Lógica para "Desativar Conta" (apenas UI por enquanto)
-            if(deactivateAccountButton){
-                deactivateAccountButton.addEventListener('click', function(){
-                    if(accountActivationCheckbox && accountActivationCheckbox.checked){
-                        if(confirm("Esta é sua última chance. Tem certeza ABSOLUTA que deseja desativar sua conta?")){
-                            alert("Conta desativada (simulação). Você será desconectado.");
-                            // No futuro: chamar API do backend para desativar a conta
-                            // localStorage.clear(); // Limpa tudo
-                            localStorage.removeItem('auth');
-                            localStorage.removeItem('loggedInUser');
-                            // Removeria também todos os dados específicos do usuário
-                            window.location.href = 'auth-login-basic.html';
-                        }
-                    } else {
-                        alert("Por favor, marque a caixa de confirmação para desativar sua conta.");
-                    }
-                });
-            }
-
-
-             // Lógica do Theme Switcher (copiada do index.html para consistência)
-            const themeSwitcherButton = document.getElementById('themeSwitcher');
-            const themeSwitcherIcon = themeSwitcherButton?.querySelector('i');
-
-            function setupThemeSwitcher() {
-                if (!themeSwitcherButton || !themeSwitcherIcon) {
-                    return; 
-                }
-                const currentMode = Helpers.getMode(); 
-
-                if (currentMode === 'dark') {
-                    themeSwitcherIcon.classList.add('bx-sun');
                 } else {
-                    themeSwitcherIcon.classList.add('bx-moon');
+                    alert("Por favor, marque a caixa de confirmação para desativar sua conta.");
                 }
+            });
+        }
 
-                themeSwitcherButton.addEventListener('click', function() {
-                    const newMode = Helpers.getMode() === 'light' ? 'dark' : 'light';
-                    Helpers.setMode(newMode, true); 
+        // Lógica do Theme Switcher
+        const themeSwitcherButton = document.getElementById('themeSwitcher');
+        const themeSwitcherIcon = themeSwitcherButton?.querySelector('i');
 
-                    themeSwitcherIcon.classList.toggle('bx-sun', newMode === 'dark');
-                    themeSwitcherIcon.classList.toggle('bx-moon', newMode === 'light');
-                });
+        function setupThemeSwitcher() {
+            if (!themeSwitcherButton || !themeSwitcherIcon) {
+                return; 
             }
-            setupThemeSwitcher(); // Chamar a função
+            const currentMode = Helpers.getMode(); 
 
-        });
+            if (currentMode === 'dark') {
+                themeSwitcherIcon.classList.add('bx-sun');
+            } else {
+                themeSwitcherIcon.classList.add('bx-moon');
+            }
+
+            themeSwitcherButton.addEventListener('click', function() {
+                const newMode = Helpers.getMode() === 'light' ? 'dark' : 'light';
+                Helpers.setMode(newMode, true); 
+
+                themeSwitcherIcon.classList.toggle('bx-sun', newMode === 'dark');
+                themeSwitcherIcon.classList.toggle('bx-moon', newMode === 'light');
+            });
+        }
+        setupThemeSwitcher();
+
+    });
     </script>
-
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
